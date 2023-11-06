@@ -8,9 +8,9 @@
 
 Welcome to the Turn-Based Tic Tac Toe Game! 🙌
 
-❌⭕⬜
-⬜❌⭕
-⬜⬜❌
+❌⭕⬜  
+⬜❌⭕  
+⬜⬜❌  
 
 ## 🧑🤖 Entities 🕹️
 
