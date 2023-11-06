@@ -1,0 +1,52 @@
+# Compiled binary files
+*.exe
+*.out
+*.test
+
+# Dependency directories
+vendor/
+
+# Output directories
+bin/
+pkg/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swm
+*~
+*.orig
+
+# Log files
+log.txt
+
+# Temporary files
+*.log
+*.lock
+
+# Build files
+/build
+/dist
+/dist-win
+/dist-mac
+
+# Test and profiling files
+.cprof
+.pprof
+.test
+
+# Ignore config files for various editors
+*.iml
+.project
+*.sublime-project
+*.sublime-workspace
+*.idea
+
+# Environment-specific .env files
+.env
+.env.local
+
+# Local development specific files
+config.local.yaml
