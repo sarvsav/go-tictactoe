@@ -1,28 +1,33 @@
-# go-tictactoe
-The tic-tac-toe, a turn based game with a twist.
+# 🎮 Tic Tac Toe Game 🎮
 
-## Rules
-1. The game is turn based.
-2. Entities:
-   1. Players
-   2. Game Board
-   3. Markers (0,X)
-   4. Categories
-   5. Questions
-   6. Scorecard
-   7. Winner
-3. There are total of 9 positions on the board (traditional game).
-4. Each position has a category marked on it (random everytime).
-5. The player will choose the marker position on the board.
-6. Once the posistion is selected, a question will reveal related to the
-   category.
-7. If the player answers the question correctly, thier marker will be placed
-   else the opponent's marker.
-8. The player getting the three markers in the row will be declared as a winner.
-9. Their are few power modes also available, that can help you to:
-   1.  change the question
-   2.  show hint
+Welcome to the Turn-Based Tic Tac Toe Game! 🙌
 
-## How to run the game
+## 🧑🤖 Entities 🕹️
 
-## How to contribute to the game
+- **Players**: You and your opponent!
+- **Game Board**: The 3x3 grid where you'll make your moves.
+- **Markers**: Choose between "0" and "X" to represent yourself on the board.
+- **Categories**: Every position on the board is associated with a random category.
+- **Questions**: Get ready to answer questions related to the chosen category!
+- **Scorecard**: Keep track of who's winning and how many games have been played.
+- **Winner**: The player who gets three markers in a row wins the game! 🏆
+
+## 🎲 How to Play 🎲
+
+1. Start the game, and the board will be initialized with random categories.
+
+2. Take turns with your opponent to choose a marker position on the board. The player who starts can pick their favorite marker - "0" or "X".
+
+3. After selecting a position, a question related to the category will be revealed.
+
+4. Answer the question correctly to place your marker. If you get it wrong, your opponent's marker takes the spot.
+
+5. Keep playing until one of you gets three markers in a row - vertically, horizontally, or diagonally! That player is declared the **Winner**. 🥇
+
+6. Power Modes: Use special abilities to your advantage:
+   - 💡 **Change the Question**: Don't like the question? Use this power mode to get a new one!
+   - 🕵️ **Show Hint**: Stuck on a question? Reveal a hint to help you out.
+
+Get ready for some thrilling matches of Tic Tac Toe and show off your knowledge in various categories! 🌟
+
+Enjoy the game! 🎉
