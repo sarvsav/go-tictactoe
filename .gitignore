@@ -50,3 +50,9 @@ log.txt
 
 # Local development specific files
 config.local.yaml
+
+# Adding version.txt - store go version
+*version.txt*
+
+# Remove reports
+reports/

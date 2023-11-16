@@ -21,8 +21,18 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/sarvsav/go-tictactoe/cmd"
+import (
+	_ "embed"
+	"fmt"
+
+	"github.com/sarvsav/go-tictactoe/cmd"
+)
+
+//go:generate bash scripts/get_version.bash
+//go:embed "version.txt"
+var version string
 
 func main() {
+	fmt.Println("build version: ", version)
 	cmd.Execute()
 }
