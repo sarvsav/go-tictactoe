@@ -23,7 +23,7 @@ package main
 
 import (
 	_ "embed"
-	"fmt"
+	"log"
 
 	"github.com/sarvsav/go-tictactoe/cmd"
 )
@@ -33,6 +33,13 @@ import (
 var version string
 
 func main() {
-	fmt.Println("build version: ", version)
+
+	// to print the build version of app
+	log.Println("build version: ", version)
+
+	// TODO: Add a cleanup function here
+	defer log.Println("Program completed successfully and doing cleanup")
+
 	cmd.Execute()
+	log.Println("Ending program")
 }

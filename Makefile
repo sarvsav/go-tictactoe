@@ -14,11 +14,11 @@ build:
 	go generate
 	go build -installsuffix cgo -o bin/"${APP_NAME}" -cover -v
 
+cleanbuild-verbose:
+	@CGO_ENABLED=0 GOCOVERDIR="reports/_icoverdir_" go build -a -x -installsuffix cgo -tags generate -o bin/"${APP_NAME}" -cover -v 
+
 cleanbuild:
-	export GOCOVERDIR="reports/_icoverdir_"
-	CGO_ENABLED=0
-	go generate
-	go build -a -installsuffix cgo -o bin/"${APP_NAME}" -cover -v
+	@CGO_ENABLED=0 GOCOVERDIR="reports/_icoverdir_" go build -a -installsuffix cgo -tags generate -o bin/"${APP_NAME}" -cover 
 
 run:
 	go run main.go
