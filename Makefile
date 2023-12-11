@@ -26,6 +26,7 @@ run:
 cov-reports:
 	go tool covdata textfmt -i "reports/_icoverdir_" -o "reports/coverage/coverage.out"
 
+# TODO: Provide all the build arguments for the docker image
 service:
 	docker build \
 		-f fence/docker/Dockerfile \
@@ -39,14 +40,18 @@ kind-init:
 		--name "${KIND_CLUSTER}" \
 		--config fence/k8s/kind/kind-config.yaml
 
+kind-info:
+	kind get clusters
+	kubectl cluster-info --context kind-${KIND_CLUSTER}
+
 kind-load:
-	kind load docker-image tictactoe-service:"${VERSION}"  --name "${KIND_CLUSTER}
+	kind load docker-image tictactoe-service:"${VERSION}"  --name "${KIND_CLUSTER}"
 
 kind-apply:
 
 
 kind-down:
-	kind delete cluster --name "${KIND_CLUSTER}
+	kind delete cluster --name "${KIND_CLUSTER}"
 
 kind-status:
 	kubectl get nodes -o wide
