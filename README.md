@@ -105,3 +105,9 @@ Thank you for your contribution! 🙏
 Feel free to open issues or discuss ideas in the repository's "Issues" section. We're excited to build a fun and educational game together. 🌟
 
 Enjoy contributing to the project, and happy coding!
+
+How to start
+
+kind-start
+
+kind-clean-start
