@@ -23,9 +23,14 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"log"
+	"net/http"
+	"runtime"
+	"strings"
 
 	"github.com/sarvsav/go-tictactoe/cmd"
+	"go.uber.org/automaxprocs/maxprocs"
 )
 
 //go:generate bash scripts/get_version.bash
@@ -34,12 +39,40 @@ var version string
 
 func main() {
 
+	// found the number of cpu at host level
+	g := runtime.GOMAXPROCS(0)
+
+	// updating based on available quota
+	if _, err := maxprocs.Set(); err != nil {
+		log.Printf("error")
+	}
+	c := runtime.GOMAXPROCS(0)
+
 	// to print the build version of app
-	log.Println("build version: ", version)
+	log.Printf("CPU Host: [%d] and Container: [%d], build version: [%s]\n", g, c, strings.Trim(version, "\n"))
 
 	// TODO: Add a cleanup function here
 	defer log.Println("Program completed successfully and doing cleanup")
 
 	cmd.Execute()
+	handler := func(w http.ResponseWriter, r *http.Request) {
+		_, err := fmt.Fprintf(w, "Hello, World!")
+		if err != nil {
+			log.Printf("Error writing response: %v", err)
+		}
+	}
+
+	port := 8080
+
+	// Register the handler function with the default ServeMux (multiplexer)
+	http.HandleFunc("/", handler)
+
+	// Start the server and listen on the specified port
+	fmt.Printf("Server listening on port: %d...\n", port)
+	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+	if err != nil {
+		log.Fatalf("Error starting the server: %v", err)
+	}
+
 	log.Println("Ending program")
 }

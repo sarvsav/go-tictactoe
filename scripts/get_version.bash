@@ -6,5 +6,5 @@ if [[ -z "$tagInfo" ]]
 then
     git rev-parse --short HEAD > version.txt
 else
-    print "$tagInfo" > version.txt
+    printf "%s" "$tagInfo" > version.txt
 fi
