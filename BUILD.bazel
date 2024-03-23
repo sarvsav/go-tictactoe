@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+# gazelle:prefix github.com/sarvsav/go-tictactoe
+
+go_binary(
+    name = "go-tictactoe",
+    embed = [":go-tictactoe_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "go-tictactoe_lib",
+    srcs = ["main.go"],
+    embedsrcs = ["version.txt"],
+    importpath = "github.com/sarvsav/go-tictactoe",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//cmd",
+        "//vendor/go.uber.org/automaxprocs/maxprocs",
+    ],
+)
