@@ -56,3 +56,7 @@ config.local.yaml
 
 # Remove reports
 reports/
+
+
+##### Bazel #####
+/bazel-*

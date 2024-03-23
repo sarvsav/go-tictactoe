@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "cmd",
+    srcs = ["root.go"],
+    importpath = "github.com/sarvsav/go-tictactoe/cmd",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/github.com/spf13/cobra",
+        "//vendor/github.com/spf13/viper",
+    ],
+)
